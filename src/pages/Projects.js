@@ -15,20 +15,22 @@ function Projects(props) {
     };
 
     // make an initial call for the data inside a useEffect
-    useEffect(() => getProjectsData(), []);
+    useEffect(() => {getProjectsData()}, []);
 
     // define a function that will return the JSX needed
     const loaded = () => {
         return projects.map((project) => (
             <div>
                 <h1>{project.name}</h1>
-                <img src={project.image} />
-                <a href={project.git}>
-                    <button>Github</button>
-                </a>
-                <a href={project.live}>
-                    <button>live site</button>
-                </a>
+                <img src={project.image} alt={"photo"}/>
+                <div>
+                    <a href={project.git}>
+                        <button>Github</button>
+                    </a>
+                    <a href={project.live}>
+                        <button>live site</button>
+                    </a>
+                </div>
             </div>
         ));
     };
